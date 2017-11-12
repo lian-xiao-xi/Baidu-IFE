@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IFE 斌斌学院 JavaScript Task 09</title>
+  <style>
+  #btnGroup::after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+  }
+    .btnGroup-left {
+      float: left;
+    }
+    .btnGroup-right {
+      float: right;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      color: #000;
+      font-size: 16px;
+      border: 2px solid;
+      border-radius: 20px;
+      border-color: #000;
+    }
+    div.add {
+      border-radius: 0;
+      height: 66%;
+      border-color: red;
+    }
+    .root {
+      width: 1300px;
+      height: 360px;
+      border-color: fuchsia;
+      margin: 20px 0;
+    }
+    .a {
+      width: 760px;
+    }
+    .b {
+      width: 380px;
+    }
+    .c {
+      width: 30px;
+    }
+    .a, .a div, .b, .b div, .c, .c div {
+      height: 88%;
+    }
+    .a-1 {
+      width: 380px;
+    }
+    .a-1-1 {
+      width: 65px;
+    }
+    .a-1-2 {
+      width: 235px;
+    }
+    .a-2 {
+      width: 40px;
+    }
+    .a-3 {
+      width: 225px;
+    }
+    .a-3-2 {
+      width: 120px;
+    }
+    .b-1 {
+      width: 250px;
+    }
+    .b-1-1 {
+      width: 190px;
+    }
+    .child1 {
+            border-color: yellowgreen;
+    }
+    .child2 {
+      border-color: deepskyblue;
+    }
+    .child3 {
+            border-color: orange;
+    }
+
+  </style>
+</head>
+
+<body>
+  <section>
+  <section class="btnGroup-left">
+    <button id="df">深度优先遍历</button>
+    <button id="bf">广度优先遍历</button>
+    <input id="search" type="text" name="" value="">
+    <button id="df-search">深度优先搜索</button>
+    <button id="bf-search">广度优先搜索</button>
+  </section>
+  <section class="btnGroup-right">
+    <button>删除选中节点及其后代节点</button>
+    <input type="text" placeholder="新添加节点的内容">
+    <button>在选中节点下添加节点</button>
+  </section>
+</section>
+
+  <div class="root">root
+    <div class="a child1">a
+      <div class="a-1 child2">a-1
+        <div class="a-1-1 child3">a-1-1</div>
+        <div class="a-1-2 child3">a-1-2
+          <div class="a-1-2-1">a-1-2-1</div>
+          <div class="a-1-2-2">a-1-2-2</div>
+        </div>
+      </div>
+      <div class="a-2 child2">a-2</div>
+      <div class="a-3 child2">a-3
+        <div class="a-3-1 child3">a-3-1</div>
+        <div class="a-3-2 child3">a-3-2
+          <div class="a-3-2-1">a-3-2-1</div>
+        </div>
+      </div>
+    </div>
+    <div class="b child1">b
+      <div class="b-1 child2">b-1
+        <div class="b-1-1 child3">b-1-1
+          <div class="b-1-1-1">b-1-1-1</div>
+          <div class="b-1-1-2">b-1-1-2</div>
+        </div>
+      </div>
+      <div class="b-2 child2">b-2</div>
+    </div>
+    <div class="c child1">c</div>
+  </div>
+
+</body>
+<!--<script src="./js.js"></script>-->
+<script src="./es6js.js"></script>
+</html>

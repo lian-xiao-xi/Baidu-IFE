@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IFE 耀耀学院 Task 01</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font: 14px/1.429 "Microsoft YaHei", arial, tahoma, sans-serif, "SimSun";
+      color: #333;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+      line-height: inherit;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      -webkit-appearance: button;
+      -moz-appearance: button;
+      cursor: pointer;
+    }
+
+    button[disabled],
+    input[disabled] {
+      cursor: default;
+    }
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    .form-box {
+      display: block;
+      width: 60%;
+      min-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-box .fieldset {
+      padding: 10px 15px;
+      margin-top: 1em;
+    }
+
+    .form-box .input-group {
+      margin-bottom: 10px;
+    }
+
+    .hint {
+      color: #ccc;
+    }
+
+    .hint.true {
+      color: green;
+    }
+
+    .hint.false {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="post" class="form-box">
+    <h1>单个表单项的检验</h1>
+    <p>点击验证按钮后，对输入框中内容进行格式校验，并在其下方显示校验结果</p>
+    <section>
+      <fieldset class="fieldset">
+        <legend>title</legend>
+        <p class="input-group">
+          <label for="account">账号：</label>
+          <input id="account" type="text" name="" value="" placeholder="">
+          <button type="button" id="judge">验证</button>
+        </p>
+        <p class="hint"><strong>必填项，长度为4-16个字符</strong></p>
+      </fieldset>
+
+    </section>
+  </form>
+</body>
+<script>
+  /*
+* 规则：每个英文字母、数字、英文符号长度为1，
+*       每个汉字，中文符号长度为2
+* 函数返回字符串按规则计算的字符长度
+*/
+  function getStrLen(str) {
+    var zhLen = 0,
+      enLen = 0;
+    for (let s of str) {
+      if (isASCII(s)) {
+        enLen++;
+      } else {
+        zhLen++;
+      }
+    }
+    return enLen + zhLen * 2;
+  }
+
+  /**
+  * 如果字符是拉丁字母则返回true,反之则返回false
+  */
+  function isASCII(s) {
+    return s.codePointAt(0) <= 0xFF;
+  }
+  var input = document.getElementById('account'),
+    hintEle = document.getElementsByClassName('hint')[0],
+    btn = document.getElementById('judge');
+
+  function judge() {
+    var text = input.value.replace(/\s/g, '');
+    if (getStrLen(text) >= 4 && getStrLen(text) <= 16) {
+      hintEle.textContent = '格式正确';
+      hintEle.classList.remove('false');
+      hintEle.classList.add('true');
+    } else if (!text) {
+      hintEle.textContent = '不能为空';
+      hintEle.classList.remove('true');
+      hintEle.classList.add('false');
+
+    } else {
+      hintEle.textContent = '格式错误';
+      hintEle.classList.remove('true');
+      hintEle.classList.add('false');
+    }
+  }
+
+  input.addEventListener('focusout', judge, false);
+  btn.addEventListener('click', judge, false);
+
+</script>
+
+</html>

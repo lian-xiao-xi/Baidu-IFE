@@ -1,0 +1,154 @@
+/*
+ * 重设浏览器默认样式
+ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /*设置根元素字体大小为 10px*/
+    font-size: 10px;
+    /****使页面上的字体抗锯齿****/
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    /*****关闭字体大小自动调整功能****/
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    /** 当用户点击iOS的Safari浏览器中的链接或JavaScript的可点击的元素时，覆盖显示的高亮颜色**/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: "Microsoft YaHei", arial, tahoma, sans-serif, "SimSun";
+    font-size: 140%;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+button, input, select, textarea {
+    font: inherit;
+    line-height: inherit;
+}
+
+/*统一按钮样式*/
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+/*解决Firefox浏览器表单框左右空出较多的问题*/
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+* 设置页面元素样式
+*/
+
+.block-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fieldset {
+    width: 85%;
+    min-width: 800px;
+    padding: .4em .8em .65em;
+    border: 2px solid #888;
+    border-radius: 15px;
+    font: inherit;
+    line-height: inherit;
+}
+.fieldset .grade, 
+.fieldset .select {
+    float: left;
+    margin-left: 7em;
+}
+.grade>label {
+    position: relative;
+    float: left;
+    width: 3.2em;
+    height: 3.2em;
+    font-size: 1.2em;
+    margin-left: 0.5em;
+    line-height: 3.2em;
+    color: #16324a;
+}
+.grade>label>span {
+    display: block;
+    height: 100%;
+    border: 1px solid #16324a;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.grade>label>input[type="radio"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+.grade>label>input[type="radio"]:checked + span{
+    background-color: #16324a;
+    color: #fff;
+}
+
+.select > select {
+    display: block;
+    padding: .2em .6em;
+    margin-top: 1em;
+}
+
+.aqi-chart-wrap {
+    display: flex;
+    width: 95%;
+    padding-top: 5em;
+    align-items: flex-end;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px #999;
+}
+.aqi-chart-wrap .data-show {
+    width: 0.55%;
+    height: 500px;background-color: red;
+    border-radius: 10px 10px 0 0;
+}

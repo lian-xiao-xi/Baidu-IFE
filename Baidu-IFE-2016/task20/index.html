@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFE 斌斌学院 JavaScript Task 06</title>
+    <style>
+        ul {
+            padding: 0;
+            margin: 1em 0;
+            list-style: none;
+        }
+        textarea {
+            vertical-align: bottom;
+        }
+        .show {
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-end;
+            align-content: flex-start;
+        }
+        .show .item {
+            min-width: 3em;
+            padding: 0 .35em;
+            background-color: indianred;
+            color: #333;
+            /* height: 3em; */
+            text-align: center;
+            line-height: 3;
+            margin: .5em;
+        }
+        .show .item .selected {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <textarea id="textarea" rows="8" cols="18" placeholder="请输入字符，并用符号隔开"></textarea>
+        <button id="insert">插入</button>
+        <button id="search">查询</button>
+        <input id="search_text" type="text" name="" value="">
+    </section>
+    <ul class="show" id="result">
+        <!--<li class="item"><span class="selected"></span></li>-->
+    </ul>
+    
+</body>
+<script src="./js.js">
+    
+</script>
+</html>

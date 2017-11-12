@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task21</title>
+    <style>
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        textarea {
+            display: block;
+            /*vertical-align: bottom;*/
+        }
+        .show {
+            font-size: 16px;
+            color: #333;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-end;
+            align-content: flex-start;
+            margin: .5em 0;
+        }
+        .show .item {
+            /*width: 5em;*/
+            min-width: 3em;
+            padding: 0 .35em;
+            background-color: deepskyblue;
+            color: #fff;
+            /*height: 3em;*/
+            text-align: center;
+            line-height: 3;
+            margin: 0 .5em .2em;
+            transition: all .5s ease;
+            cursor: pointer;
+        }
+        .show .item:hover {
+            background-color: red;
+        }
+        .show .item:hover::before {
+            font-size: inherit;
+        }
+        .show .item::before {
+            display: inline-block;
+            content: '点击删除';
+            color: inherit;
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="tag">
+            <label for="tag_input">Tag: </label>
+            <input id="tag_input" type="text" name="" value="">
+        </div>
+        <ul id="tag_show" class="show">
+            <!--<li class="item">CSS</li>-->
+        </ul>
+    </section>
+
+    <section>
+        <textarea name="" id="hobby_text" cols="20" rows="10"></textarea>
+        <button id="hob_btn">确认兴趣爱好</button>
+        <ul id="hob_show" class="show">
+            <!--<li class="item">游泳</li>-->
+        </ul>
+    </section>    
+</body>
+<script src="./js.js"></script>
+</html>

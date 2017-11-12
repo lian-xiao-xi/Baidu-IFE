@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IFE 耀耀学院 Task 02</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <form method="post" class="form-box block-center">
+    <h1>多个表单项的检验</h1>
+    <p>点击验证按钮后，对输入框中内容进行格式校验，并在其下方显示校验结果</p>
+    <section>
+      <fieldset>
+        <legend>title</legend>
+        <p class="input-group">
+          <label for="name">名称：</label>
+          <input id="name" type="text" autocomplete name="" value="" placeholder="">
+        </p>
+        <p class="hint hidden" data-name="name"><strong>长度为4-16个字符</strong></p>
+        <p class="input-group">
+          <label for="password">密码：</label>
+          <input id="password" type="password" name="" value="" placeholder="">
+        </p>
+        <p class="hint hidden" data-name="password"><strong>至少包含6-20个数字和字母</strong></p>
+        <p class="input-group">
+          <label for="confrim-pass">确认密码：</label>
+          <input id="confrim-pass" type="password" name="" value="" placeholder="">
+        </p>
+        <p class="hint hidden" data-name="confrim-pass"><strong>请再次输入密码</strong></p>
+        <p class="input-group">
+          <label for="email">邮箱：</label>
+          <input id="email" type="email" autocomplete>
+        </p>
+        <p class="hint hidden" data-name="email"><strong>请输入正确格式的邮箱地址</strong></p>
+        <p class="input-group">
+          <label for="telnum">手机：</label>
+          <input id="telnum" type="tel" autocomplete data-required="no">
+        </p>
+        <p class="hint hidden" data-name="telnum"><strong>手机号码为选填项</strong></p>
+    <input type="submit" id="subBtn">
+      </fieldset>
+    </section>
+  </form>
+</body>
+<script src="./js.js"></script>
+<!--
+  强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：
+  ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
+-->
+</html>

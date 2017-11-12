@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFE 耀耀学院 Task 03</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font: 14px/1.429 "Microsoft YaHei", arial, tahoma, sans-serif, "SimSun";
+            color: #333;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+            line-height: inherit;
+        }
+
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            cursor: pointer;
+        }
+
+        button[disabled],
+        input[disabled] {
+            cursor: default;
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        input[type="radio"]:focus{
+            outline: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-ele {
+            color: #333;
+            line-height: inherit;
+            font-size: 1em;
+            padding: 6px 11px;
+            background-color: #fff;
+            background-image: none;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            border: 1px solid;
+            border-color: #666;
+            border-radius: 5px;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .form-box {
+            display: block;
+            width: 60%;
+            min-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-box fieldset {
+            padding: 10px 15px;
+        }
+
+        .form-box fieldset legend {
+            font-size: 150%;
+        }
+
+        .radio-select {
+            font-size: 1.6em;
+            margin-bottom: .8em;
+            /*text-align: center;*/
+        }
+
+        .radio-select label {
+            padding: 3px 8px;
+        }
+
+        .radio-select label input {
+            margin-right: 10px;
+        }
+
+        .select-container .sel-city,
+        .select-container .sel-school {
+            margin-left: 2em;
+            width: 22%;
+            min-width: 150px;
+            height: 2.6em;
+        }
+
+        .select-container .outSchool input {
+            width: 40%;
+            min-width: 18em;
+            height: 2.6em;
+            margin-left: 2em;
+        }
+        .select-container .inSchool > label,
+        .select-container .outSchool > label {
+            font-size: 1.6em;
+            vertical-align: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form-box" action="index.html" method="post">
+        <h1>表单联动</h1>
+        <p>选择在校生时，显示学校所在城市选中和学校名称选择；切换城市时，学校选项随之切换。<br> 选择非在校生时，显示就业单位输入框
+        </p>
+        <fieldset>
+            <legend>title</legend>
+            <section class="radio-select">
+                <label>
+                    <input id="radioStu" type="radio" name="if_stu" value="stu" checked="">在校生
+                </label>
+                <label>
+                    <input id="radioNo_stu" type="radio" name="if_stu" value="no_stu">非在校生
+                </label>
+            </section>
+            <div class="select-container">
+                <section class="inSchool">
+                    <label for="">学校</label>
+                    <select id="sel-city" class="sel-city form-ele" name="city">
+                        <option value="上海">上海</option>
+                        <option value="北京">北京</option>
+                        <option value="广州">广州</option>
+                        <option value="天津">天津</option>
+                    </select>
+                    <select id="sel-school" class="sel-school form-ele" name="school">
+                        <option value="复旦大学">复旦大学</option>
+                        <option value="上海交大">上海交大</option>
+                        <option value="同济大学">同济大学</option>
+                        <option value="华东师范大学">华东师范大学</option>
+                        <option value="上海财经大学">上海财经大学</option>
+                        <option value="东华大学">东华大学</option>
+                    </select>
+                </section>
+                <section class="outSchool hidden">
+                    <label for="location">就业单位</label>
+                    <input id="location" class="form-ele" type="text" name="" value="">
+                </section>
+            </div>
+        </fieldset>
+    </form>
+</body>
+<script src="./js.js" charset="utf-8"></script>
+</html>
