@@ -1,0 +1,60 @@
+.wrapper {
+  width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+.form-group {
+  height: 40px;
+}
+.email-label {
+  padding-right: 10px;
+  line-height: 40px;
+  text-align: right;
+  width: 17%;
+  float: left;
+  font-weight: 600;
+  font-size: 16px;
+}
+.email-wrapper {
+  width: 83%;
+  float: left;
+  height: 100%;
+}
+.email-input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.email-sug {
+  margin-left: 63px;
+  display: block;
+}
+.email-sug>li {
+  cursor: pointer;
+}
+.email-sug>li:hover {
+  background-color: #ddd;
+}
+.email-sug>li.actived {
+  background-color: #0366d6;
+  color: #fdfdfd;
+}
+
+/*# sourceMappingURL=../maps/index/index.css.map */

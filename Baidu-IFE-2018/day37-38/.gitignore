@@ -1,6 +1,7 @@
 .DS_Store
 node_modules/
-dist/
+# 将dist目录上传到github，可在线预览项目效果，省去clone到本地再下载依赖运行的功夫
+# dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
