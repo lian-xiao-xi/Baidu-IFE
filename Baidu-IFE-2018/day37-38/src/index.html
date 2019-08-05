@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ife-2018-day37</title>
+  <link rel="stylesheet" href="./assets/normalize.css">
+  <link rel="stylesheet" href="css/index/index.css">
+  <script src="./assets/polyfill.min.js"></script>
+</head>
+
+<body>
+  <div class="area">
+    <form action="" name="page-form" id="page-form">
+      <div id="region-radio-wrapper" class="radio-wrapper">
+        <div class="checkbox-group region">
+          <input type="checkbox" id="region-checkbox1" class="region-checkbox" data-check="item" value="华南">
+          <label for="region-checkbox1" class="region-label">华南</label>
+        </div>
+        <div class="checkbox-group region">
+          <input type="checkbox" id="region-checkbox2" class="region-checkbox" data-check="item" value="华北">
+          <label for="region-checkbox2" class="region-label">华北</label>
+        </div>
+        <div class="checkbox-group region">
+          <input type="checkbox" id="region-checkbox3" class="region-checkbox" data-check="item" value="华东">
+          <label for="region-checkbox3" class="region-label">华东</label>
+        </div>
+        <div class="checkbox-group region checkall">
+          <input type="checkbox" id="region-checkall" class="region-checkall" data-check="checkall">
+          <label for="region-checkall" class="checkall-label">全选</label>
+        </div>
+      </div>
+      <div id="product-radio-wrapper" class="radio-wrapper">
+        <div class="checkbox-group product">
+          <input type="checkbox" id="product-checkbox1" class="product-checkbox" data-check="item" value="手机">
+          <label for="product-checkbox1" class="product-label">手机</label>
+        </div>
+        <div class="checkbox-group product">
+          <input type="checkbox" id="product-checkbox2" class="product-checkbox" data-check="item" value="智能音箱">
+          <label for="product-checkbox2" class="product-label">智能音箱</label>
+        </div>
+        <div class="checkbox-group product">
+          <input type="checkbox" id="product-checkbox3" class="product-checkbox" data-check="item" value="笔记本">
+          <label for="product-checkbox3" class="product-label">笔记本</label>
+        </div>
+        <div class="checkbox-group product checkall">
+          <input type="checkbox" id="product-checkall" class="product-checkall" data-check="checkall">
+          <label for="product-checkall" class="checkall-label">全选</label>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="table-wrapper">
+    
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-esc" id="esc-save">取消</button>
+    <button class="btn btn-save" id="save-table">保存</button>
+  </div>
+</body>
+<script data-main="javascript/index/index" src="./assets/require.js"></script>
+</html>
