@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>IFE 耀耀学院 Task 04</title>
+    <title>IFE 耀耀学院 Task 05</title>
     <style>
         * {
             padding: 0;
@@ -14,6 +14,15 @@
 
         ul, ol {
             list-style: none;
+        }
+
+        .clearfix::after, 
+        .clearfix::before {
+            display: table;
+            content: '';
+        }
+        .clearfix::after {
+            clear: both;
         }
 
         .box {
@@ -94,15 +103,49 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .hander input {
-            float: left;
+        /*.hander input {
             width: 180px;
             padding: 3px 6px;
-        }
+        }*/
         .hander button {
-            float: left;
             margin-left: 2em;
             padding: 2px 6px;
+        }
+        .hander .show {
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .show #command {
+            display: block;
+            box-sizing: border-box;
+            width: 350px;
+            height: 150px;
+            float: left;
+            background-color: #333;
+            font-size: inherit;
+            line-height: inherit;
+            color: #fff;
+            white-space: nowrap;
+            outline: none;
+        }
+        .show .line {
+            display: block;
+            height: 150px;
+            min-width: 16px;
+            float: left;
+            line-height: inherit;
+            overflow: hidden;
+            background-color: #ccc;
+            color: #fff;
+        }
+        .line .line-num {
+            display: block;
+            padding: 0 2px;
+            text-align: center;
+        }
+        .line .line-num.error {
+            background-color: red;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -237,8 +280,14 @@
         </ol>
     </div>
     <div class="hander">
-        <input class="hander-input" type="text" name="" value="">
-        <button type="button" name="button">执行</button>
+        <button id="btn-run" type="button" name="run">执行</button>
+        <button id="btn-refresh" type="button" name="refresh">Refresh</button>
+        <div class="show clearfix">
+            <ul class="line">
+                <li class="line-num">1</li>
+            </ul>
+            <textarea id="command" rows="6" cols="50"></textarea>
+        </div>
     </div>
 
 </body>
